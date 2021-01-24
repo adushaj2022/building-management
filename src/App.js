@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import NavBar from "./NavBar";
+import SideBar from "./SideBar";
+import { SideBarContext } from "./SideBarContext";
+import { BrowserRouter, Route } from "react-router-dom";
+import Employees from "./Employees";
+import Calender from "./Calender";
+import Residents from "./Residents";
 
 function App() {
+  const [value, setValue] = useState(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <SideBarContext.Provider value={{ value, setValue }}>
+          <NavBar />
+
+          <div className="body-container">
+            <div className={value ? "side-bar" : "side-bar-inactive"}>
+              {" "}
+              <SideBar />
+            </div>
+
+            <div className="main-contents">
+              <div className="midContainer">
+                <Route path="/Employees" component={Employees} />
+                <Route path="/Calender" component={Calender} />
+                <Route path="/Residents" component={Residents} />
+              </div>
+            </div>
+          </div>
+        </SideBarContext.Provider>
+      </div>
+    </BrowserRouter>
   );
 }
 

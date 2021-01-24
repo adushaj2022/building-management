@@ -1,0 +1,23 @@
+.calender-container {
+  background-color: #8b78e6;
+  width: 700px;
+  border: 1px solid #8b78e6;
+}
+
+.calender {
+  margin-top: -50px;
+  width: 800px !important;
+  font-size: 1.3rem !important;
+  padding-bottom: 10px;
+}
+
+.calender-title {
+  margin-bottom: 55px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.calender * {
+  font-size: 20px;
+}
