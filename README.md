@@ -1,5 +1,6 @@
 <p align="center">
   <img src="pic.PNG">
+    <img src="pic2.png">
 </p>
 
 # Getting Started with Create React App
